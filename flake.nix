@@ -1,6 +1,12 @@
 {
   description = "Boorusama Linux build";
+
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
+  nixConfig = {
+    extra-substituters = ["https://boorusama.cachix.org"];
+    extra-trusted-public-keys = ["boorusama.cachix.org-1:oGQkTvaFMP+Q4ekSsJh0fJqoVeEEo97PfrjYfGN6FJs="];
+  };
 
   outputs = {
     self,
