@@ -31,6 +31,7 @@
           ffmpeg-headless,
           mdk-sdk,
           mpv-unwrapped,
+          wrapGAppsHook3,
           lib,
           ...
         }:
@@ -47,6 +48,7 @@
 
             nativeBuildInputs = [
               autoPatchelfHook
+              wrapGAppsHook3
             ];
 
             buildInputs =
