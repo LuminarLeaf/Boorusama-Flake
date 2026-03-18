@@ -23,7 +23,7 @@
       default = self.packages.${system}.boorusama;
       boorusama = pkgs.callPackage (
         {
-          flutter335,
+          flutter341,
           fetchFromGitHub,
           autoPatchelfHook,
           alsa-lib,
@@ -35,15 +35,15 @@
           lib,
           ...
         }:
-          flutter335.buildFlutterApplication {
+          flutter341.buildFlutterApplication {
             pname = "boorusama";
-            version = "4.3.4";
+            version = "4.4.0";
 
             src = fetchFromGitHub {
               owner = "khoadng";
               repo = "Boorusama";
-              rev = "v4.3.4";
-              sha256 = "sha256-3P99iMBLarkqI6uueo9fbcm1Zh3XZag6eX8vrGuoEtg=";
+              rev = "v4.4.0";
+              sha256 = "sha256-wEdyEn7Gj3Y1xLkDPAgAuhcfbhjm1q1V/r0l1leYRAQ=";
             };
 
             nativeBuildInputs = [
@@ -59,7 +59,7 @@
                 mdk-sdk
                 mpv-unwrapped
               ]
-              ++ pkgs.mpv-unwrapped.buildInputs;
+              ++ mpv-unwrapped.buildInputs;
 
             pubspecLock = lib.importJSON ./pubspec.lock.json;
 
