@@ -1,24 +1,25 @@
 {
-  flutter341,
+  lib,
   fetchFromGitHub,
+  callPackage,
+  flutter341,
   autoPatchelfHook,
+  wrapGAppsHook3,
   alsa-lib,
   libepoxy,
   ffmpeg-headless,
   mdk-sdk,
   mpv-unwrapped,
-  wrapGAppsHook3,
-  lib,
   ...
 }:
-flutter341.buildFlutterApplication {
+flutter341.buildFlutterApplication (finalAttrs: {
   pname = "boorusama";
   version = "4.4.0";
 
   src = fetchFromGitHub {
     owner = "khoadng";
     repo = "Boorusama";
-    rev = "v4.4.0";
+    tag = "v${finalAttrs.version}";
     sha256 = "sha256-wEdyEn7Gj3Y1xLkDPAgAuhcfbhjm1q1V/r0l1leYRAQ=";
   };
 
@@ -36,6 +37,10 @@ flutter341.buildFlutterApplication {
       mpv-unwrapped
     ]
     ++ mpv-unwrapped.buildInputs;
+
+  customSourceBuilders = {
+    flutter_avif_linux = callPackage ./flutter_avif_linux {};
+  };
 
   pubspecLock = lib.importJSON ./pubspec.lock.json;
 
@@ -77,4 +82,4 @@ flutter341.buildFlutterApplication {
       "x86_64-linux"
     ];
   };
-}
+})
