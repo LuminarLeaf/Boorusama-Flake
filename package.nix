@@ -4,6 +4,7 @@
   callPackage,
   flutter341,
   autoPatchelfHook,
+  makeWrapper,
   wrapGAppsHook3,
   alsa-lib,
   libepoxy,
@@ -25,6 +26,7 @@ flutter341.buildFlutterApplication (finalAttrs: {
 
   nativeBuildInputs = [
     autoPatchelfHook
+    makeWrapper
     wrapGAppsHook3
   ];
 
@@ -58,6 +60,11 @@ flutter341.buildFlutterApplication (finalAttrs: {
     (cd packages/booru_clients && $DART_RUN tools/generate_config.dart)
     (cd packages/booru_clients && $DART_RUN tools/generate_yaml_configs.dart)
     (cd packages/booru_clients && $DART_RUN tools/generate_registry.dart)
+  '';
+
+  postFixup = ''
+    wrapProgram "$out/bin/boorusama" \
+      --prefix LD_LIBRARY_PATH : "$out/app/boorusama/lib"
   '';
 
   gitHashes = {
