@@ -15,13 +15,13 @@
 }:
 flutter341.buildFlutterApplication (finalAttrs: {
   pname = "boorusama";
-  version = "4.4.0";
+  version = "4.5.0";
 
   src = fetchFromGitHub {
     owner = "khoadng";
     repo = "Boorusama";
     tag = "v${finalAttrs.version}";
-    sha256 = "sha256-wEdyEn7Gj3Y1xLkDPAgAuhcfbhjm1q1V/r0l1leYRAQ=";
+    hash = "sha256-nwjTSulsDFqHo0Cb+Cpts3zjO5noqVMDTxVIjcLc77g=";
   };
 
   nativeBuildInputs = [
@@ -72,9 +72,11 @@ flutter341.buildFlutterApplication (finalAttrs: {
     extended_image_library = "sha256-PEnZzJL08BtrcRqEA+9KmbDhIZou2D8YkBn1u4LCNZc=";
     flutter_launcher_icons = "sha256-oHQrBjxc9tFshlyGcXU8FdYD8pKFW6O/GDc9r9VZLNU=";
     flutter_avif = "sha256-L6+xYoTgii5BSSUIZqEYV4q9KMp2W4KdaCQmKu2pt8E=";
+    flutter_riverpod = "sha256-cTeAe0652nGK3M2ZsixpQMfJ3ICbH28TFDR15m0xDDk=";
     fvp = "sha256-79O9INAnEAYsaxsDlLtnMfJqEV650a74UuNZ8Lu9FW4=";
     graphql_flutter = "sha256-GBqnOwVhcAUE86m4Vdd7sSJ/OwaDAWTemxK97ksy/3U=";
     reorderables = "sha256-01IIyshxRaACOWfa3qaqw6l/l1oUFCbgqU6p5QlloZI=";
+    riverpod = "sha256-cTeAe0652nGK3M2ZsixpQMfJ3ICbH28TFDR15m0xDDk=";
     searchfield = "sha256-HXs1/q3zQSjGZYUKekfIR+/UCXhQOj56BtCqD1s6d9o=";
     selection_mode = "sha256-wrwP4hTYXtduu6DjSyFxgYpH5vOK9M13myQpePkZnYo=";
     webview_cookie_manager = "sha256-a64BxLcSV2D0ErCU/6XPl9Nnm9R8KkLouX6ol2nmtTo=";
