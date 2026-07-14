@@ -15,13 +15,13 @@
 }:
 flutter341.buildFlutterApplication (finalAttrs: {
   pname = "boorusama";
-  version = "4.5.0";
+  version = "4.5.1";
 
   src = fetchFromGitHub {
     owner = "khoadng";
     repo = "Boorusama";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-nwjTSulsDFqHo0Cb+Cpts3zjO5noqVMDTxVIjcLc77g=";
+    hash = "sha256-cnMKUlj4M2aBymHwSc/z3CSmf3yt2ZT6w9uoNPcwCXY=";
   };
 
   nativeBuildInputs = [
